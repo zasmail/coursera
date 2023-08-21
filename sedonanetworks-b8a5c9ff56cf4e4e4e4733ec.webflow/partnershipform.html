@@ -211,6 +211,7 @@ $('#insurance').change(function(){
       // Execute a function when the button is clicked
       
       _ps("send", "updated", { custom_data: { first_name:  $('#First-Name').val(), last_name:  $('#Last-Name').val(), company_name:  $('#Company-Name').val() } });
+      window.location.href = "https://coursera.org/";
 
     });
 
@@ -222,12 +223,11 @@ $('#insurance').change(function(){
     // The event_callback function will be invoked once the "send" is complete.
     event_callback: function (err, eventType, clickwrapGroup, payload) {
       if (err) {
-        debugger;
+        console.error(err)  ;
         // The send encountered an error.
       }
       // The send is complete and acceptance was captured successfully.
-      debugger;
-      window.location.href = "https://coursera.org/";
+      console.log("Agreement accepted!");
 
     }
   });
